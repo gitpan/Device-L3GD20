@@ -10,7 +10,7 @@ package Device::L3GD20::Gyroscope;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.001'; # VERSION
+our $VERSION = '0.002'; # VERSION
 
 use 5.010;
 use Moose;
@@ -98,7 +98,7 @@ Device::L3GD20::Gyroscope - I2C interface to Gyroscope on the L3GD20 using Devic
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 METHODS
 

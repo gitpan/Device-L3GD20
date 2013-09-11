@@ -3,7 +3,7 @@ NAME
     Device::SMBus
 
 VERSION
-    version 0.001
+    version 0.002
 
 ATTRIBUTES
   I2CBusDevicePath
@@ -15,7 +15,7 @@ ATTRIBUTES
         $self->Gyroscope->enable();
         $self->Gyroscope->getReading();
 
-    This is a object of [[Device::LSM303DLHC::Gyroscope]]
+    This is a object of Device::L3GD20::Gyroscope
 
 SUPPORT
   Bugs / Feature Requests
