@@ -31,10 +31,10 @@ no_index:
 provides:
   Device::L3GD20:
     file: lib/Device/L3GD20.pm
-    version: 0.002
+    version: 0.003
   Device::L3GD20::Gyroscope:
     file: lib/Device/L3GD20/Gyroscope.pm
-    version: 0.002
+    version: 0.003
 requires:
   Device::SMBus: 0
   Moose: 0
@@ -46,7 +46,7 @@ resources:
   bugtracker: https://github.com/shantanubhadoria/device-l3gd20/issues
   homepage: https://metacpan.org/release/Device-L3GD20
   repository: git://github.com/shantanubhadoria/device-l3gd20.git
-version: 0.002
+version: 0.003
 x_contributors:
   - 'Shantanu <shantanu@cpan.org>'
   - 'Shantanu Bhadoria <shantanu@cpan.org>'

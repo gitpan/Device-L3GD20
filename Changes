@@ -1,7 +1,15 @@
-Revision history for Perl extension Device::L3GD20.
+Changelog for Device-L3GD20
 
-0.001  Sat Sep  7 13:18:47 2013
-	- original version;  
+0.003 2013-09-12T09:20:41
+ - Added README.pod and Changes [Shantanu]
 
-0.002  
-  - Pod fix  
+0.002 2013-09-11T09:13:46
+ - pod fix [Shantanu]
+
+0.001 2013-09-11T08:25:26
+ - First Release [Shantanu]
+ - First Release [Shantanu]
+ - first commit [Shantanu Bhadoria]
+ -  minor commit [Shantanu Bhadoria]
+ - First Commit [Shantanu Bhadoria]
+
