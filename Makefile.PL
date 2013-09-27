@@ -25,8 +25,10 @@ my %WriteMakefileArgs = (
     "Device::SMBus" => 0,
     "Moose" => 0,
     "POSIX" => 0,
+    "Time::HiRes" => 0,
     "constant" => 0,
-    "integer" => 0
+    "strict" => 0,
+    "warnings" => 0
   },
   "TEST_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0,
@@ -34,11 +36,9 @@ my %WriteMakefileArgs = (
     "File::Spec::Functions" => 0,
     "File::Temp" => 0,
     "List::Util" => 0,
-    "Test::More" => 0,
-    "strict" => 0,
-    "warnings" => 0
+    "Test::More" => 0
   },
-  "VERSION" => "0.003",
+  "VERSION" => "0.004",
   "test" => {
     "TESTS" => "t/*.t"
   }

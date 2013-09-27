@@ -19,8 +19,8 @@ my @modules = qw(
   Moose
   POSIX
   Test::More
+  Time::HiRes
   constant
-  integer
   perl
   strict
   warnings

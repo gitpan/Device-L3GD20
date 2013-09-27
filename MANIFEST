@@ -6,14 +6,15 @@ META.yml
 Makefile.PL
 README
 examples/example.pl
+lib/Device/Gyroscope/L3GD20.pm
 lib/Device/L3GD20.pm
-lib/Device/L3GD20/Gyroscope.pm
 t/00-compile.t
 t/00-report-prereqs.t
 t/Device-L3GD20.t
 xt/author/critic.t
 xt/author/pod-spell.t
 xt/release/distmeta.t
+xt/release/kwalitee.t
 xt/release/minimum-version.t
 xt/release/pod-coverage.t
 xt/release/pod-syntax.t

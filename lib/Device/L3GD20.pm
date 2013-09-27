@@ -1,3 +1,6 @@
+use strict;
+use warnings;
+
 package Device::L3GD20;
 
 # PODNAME: Device::L3GD20
@@ -10,14 +13,14 @@ package Device::L3GD20;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.003'; # VERSION
+our $VERSION = '0.004'; # VERSION
 
+# Dependencies
 use 5.010;
 use Moose;
 use POSIX;
 
-# Dependencies
-use Device::L3GD20::Gyroscope;
+use Device::Gyroscope::L3GD20;
 
 
 has 'I2CBusDevicePath' => ( is => 'ro', );
@@ -25,14 +28,14 @@ has 'I2CBusDevicePath' => ( is => 'ro', );
 
 has Gyroscope => (
     is         => 'ro',
-    isa        => 'Device::L3GD20::Gyroscope',
+    isa        => 'Device::Gyroscope::L3GD20',
     lazy_build => 1,
 );
 
 sub _build_Gyroscope {
     my ($self) = @_;
     my $obj =
-      Device::L3GD20::Gyroscope->new(
+      Device::Gyroscope::L3GD20->new(
         I2CBusDevicePath => $self->I2CBusDevicePath, );
     return $obj;
 }
@@ -49,7 +52,7 @@ Device::L3GD20 - I2C interface to L3GD20 3 axis GyroScope using Device::SMBus
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 ATTRIBUTES
 
@@ -63,7 +66,7 @@ This must be provided during object creation.
     $self->Gyroscope->enable();
     $self->Gyroscope->getReading();
 
-This is a object of L<Device::L3GD20::Gyroscope>
+This is a object of L<Device::Gyroscope::L3GD20>
 
 =for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders metacpan
 

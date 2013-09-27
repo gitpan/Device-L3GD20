@@ -18,7 +18,8 @@
          "t",
          "xt",
          "examples",
-         "corpus"
+         "corpus",
+         "inc"
       ],
       "package" : [
          "DB"
@@ -43,9 +44,11 @@
             "Device::SMBus" : "0",
             "Moose" : "0",
             "POSIX" : "0",
+            "Time::HiRes" : "0",
             "constant" : "0",
-            "integer" : "0",
-            "perl" : "5.010"
+            "perl" : "5.010",
+            "strict" : "0",
+            "warnings" : "0"
          }
       },
       "test" : {
@@ -55,20 +58,18 @@
             "File::Spec::Functions" : "0",
             "File::Temp" : "0",
             "List::Util" : "0",
-            "Test::More" : "0",
-            "strict" : "0",
-            "warnings" : "0"
+            "Test::More" : "0"
          }
       }
    },
    "provides" : {
+      "Device::Gyroscope::L3GD20" : {
+         "file" : "lib/Device/Gyroscope/L3GD20.pm",
+         "version" : "0.004"
+      },
       "Device::L3GD20" : {
          "file" : "lib/Device/L3GD20.pm",
-         "version" : "0.003"
-      },
-      "Device::L3GD20::Gyroscope" : {
-         "file" : "lib/Device/L3GD20/Gyroscope.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       }
    },
    "release_status" : "stable",
@@ -83,7 +84,7 @@
          "web" : "https://github.com/shantanubhadoria/device-l3gd20"
       }
    },
-   "version" : "0.003",
+   "version" : "0.004",
    "x_contributors" : [
       "Shantanu <shantanu@cpan.org>",
       "Shantanu Bhadoria <shantanu@cpan.org>"

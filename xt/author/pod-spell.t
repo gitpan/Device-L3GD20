@@ -15,6 +15,17 @@ GyroScope
 getRawReading
 CBus
 CBusDevicePath
+CDevice
+CDeviceAddress
+Containd
+XZero
+YZero
+ZZero
+atleast
+getReading
+gyroscopeGain
+lastReadingTime
+timeDrift
 Shantanu
 Bhadoria
 at
