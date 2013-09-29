@@ -1,6 +1,18 @@
 Changelog for Device-L3GD20
 
-0.004 2013-09-27T10:17:53
+0.005 2013-09-29T02:45:35
+ - Pod Spelling Fixes [Shantanu]
+
+0.004 2013-09-27T10:18:18
+ - v0.004
+   
+    - Xt test fixes [Shantanu]
+    - Fixed error in L3GD20.pm [Shantanu]
+    - Refactored Libraries to give all similar devices a common prefix for
+      easy identification as plugins [Shantanu]
+    - Merge branch 'master' of github.com:shantanubhadoria/Device-L3GD20
+      [Shantanu Bhadoria]
+    - minor Changes [Shantanu Bhadoria] [Shantanu]
  - Xt test fixes [Shantanu]
  - Fixed error in L3GD20.pm [Shantanu]
  - Refactored Libraries to give all similar devices a common prefix for

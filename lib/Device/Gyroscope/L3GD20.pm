@@ -13,7 +13,7 @@ package Device::Gyroscope::L3GD20;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.004'; # VERSION
+our $VERSION = '0.005'; # VERSION
 
 # Dependencies
 use 5.010;
@@ -152,31 +152,13 @@ Device::Gyroscope::L3GD20 - I2C interface to Gyroscope on the L3GD20 using Devic
 
 =head1 VERSION
 
-version 0.004
-
-=head1 REGISTERS
-
-=head2 CTRL_REG1
-
-=head2 CTRL_REG4
-
-=head2 OUT_X_H
-
-=head2 OUT_X_L
-
-=head2 OUT_Y_H
-
-=head2 OUT_Y_L
-
-=head2 OUT_Z_H
-
-=head2 OUT_Z_L
+version 0.005
 
 =head1 ATTRIBUTES
 
 =head2 I2CDeviceAddress
 
-Containd the I2CDevice Address for the bus on which your gyroscope is connected. It would look like 0x6b. Default is 0x6b.
+Contains the I2CDevice Address for the bus on which your gyroscope is connected. It would look like 0x6b. Default is 0x6b.
 
 =head2 gyroscopeGain
 
@@ -225,6 +207,24 @@ Return gyroscope readings in degrees per second
 =head2 calibrate
 
 Placeholder for documentation on calibration
+
+=head1 REGISTERS
+
+=head2 CTRL_REG1
+
+=head2 CTRL_REG4
+
+=head2 OUT_X_H
+
+=head2 OUT_X_L
+
+=head2 OUT_Y_H
+
+=head2 OUT_Y_L
+
+=head2 OUT_Z_H
+
+=head2 OUT_Z_L
 
 =head1 AUTHOR
 

@@ -13,7 +13,7 @@ package Device::L3GD20;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.004'; # VERSION
+our $VERSION = '0.005'; # VERSION
 
 # Dependencies
 use 5.010;
@@ -52,7 +52,7 @@ Device::L3GD20 - I2C interface to L3GD20 3 axis GyroScope using Device::SMBus
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 ATTRIBUTES
 

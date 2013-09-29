@@ -17,7 +17,6 @@ CBus
 CBusDevicePath
 CDevice
 CDeviceAddress
-Containd
 XZero
 YZero
 ZZero

@@ -3,7 +3,7 @@ NAME
     Device::SMBus
 
 VERSION
-    version 0.004
+    version 0.005
 
 ATTRIBUTES
   I2CBusDevicePath
