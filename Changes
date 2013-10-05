@@ -1,6 +1,16 @@
 Changelog for Device-L3GD20
 
-0.006 2013-10-05T00:45:32
+0.007 2013-10-05T00:46:32
+ - Merge branch 'master' of github.com:shantanubhadoria/Device-L3GD20
+   [Shantanu]
+ - new readings [Shantanu Bhadoria]
+
+0.006 2013-10-05T00:46:00
+ - v0.006
+   
+    - new readings [Shantanu Bhadoria]
+    - Renamed getReading to getReadingDegreesPerSecond [Shantanu Bhadoria]
+   [Shantanu]
  - new readings [Shantanu Bhadoria]
  - Renamed getReading to getReadingDegreesPerSecond [Shantanu Bhadoria]
 

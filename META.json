@@ -65,11 +65,11 @@
    "provides" : {
       "Device::Gyroscope::L3GD20" : {
          "file" : "lib/Device/Gyroscope/L3GD20.pm",
-         "version" : "0.006"
+         "version" : "0.007"
       },
       "Device::L3GD20" : {
          "file" : "lib/Device/L3GD20.pm",
-         "version" : "0.006"
+         "version" : "0.007"
       }
    },
    "release_status" : "stable",
@@ -84,7 +84,7 @@
          "web" : "https://github.com/shantanubhadoria/device-l3gd20"
       }
    },
-   "version" : "0.006",
+   "version" : "0.007",
    "x_contributors" : [
       "Shantanu <shantanu@cpan.org>",
       "Shantanu Bhadoria <shantanu@cpan.org>"
