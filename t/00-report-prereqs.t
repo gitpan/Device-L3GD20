@@ -16,10 +16,10 @@ my @modules = qw(
   File::Spec::Functions
   File::Temp
   List::Util
+  Math::Trig
   Moose
   POSIX
   Test::More
-  Time::HiRes
   constant
   perl
   strict

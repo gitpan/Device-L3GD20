@@ -25,6 +25,11 @@ getReading
 gyroscopeGain
 lastReadingTime
 timeDrift
+getReadingDegreesPerSecond
+getReadingRadiansPerSecond
+xZero
+yZero
+zZero
 Shantanu
 Bhadoria
 at

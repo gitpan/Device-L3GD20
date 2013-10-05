@@ -16,7 +16,7 @@ my ( $x,  $y,  $z )  = ( 0, 0, 0 );
 my ( $dx, $dy, $dz ) = ( 0, 0, 0 );
 my $count = 0;
 while () {
-    $gyro = $g->getReading();
+    $gyro = $g->getReadingDegreesPerSecond();
     $graw = $g->getRawReading();
 
     #    print 'Gyroscope(Raw): ' . Dumper $g->getRawReading();

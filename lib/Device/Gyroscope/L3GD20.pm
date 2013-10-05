@@ -13,14 +13,14 @@ package Device::Gyroscope::L3GD20;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.005'; # VERSION
+our $VERSION = '0.006'; # VERSION
 
 # Dependencies
 use 5.010;
 use Moose;
 use POSIX;
 
-use Time::HiRes qw(time);
+use Math::Trig qw(deg2rad);
 
 extends 'Device::SMBus';
 
@@ -37,31 +37,19 @@ has gyroscopeGain => (
 );
 
 
-has XZero => (
+has xZero => (
     is      => 'rw',
     default => 0,
 );
 
 
-has YZero => (
+has yZero => (
     is      => 'rw',
     default => 0,
 );
 
 
-has ZZero => (
-    is      => 'rw',
-    default => 0,
-);
-
-
-has lastReadingTime => (
-    is      => 'rw',
-    default => 0,
-);
-
-
-has timeDrift => (
+has zZero => (
     is      => 'rw',
     default => 0,
 );
@@ -99,26 +87,21 @@ sub enable {
 sub getRawReading {
     my ($self) = @_;
 
-    my $currentTime = time;
-    $self->timeDrift( $currentTime - $self->lastReadingTime )
-      if $self->lastReadingTime;
-    $self->lastReadingTime($currentTime);
-
     return {
         x =>
           ( $self->_typecast_int_to_int16( $self->readNBytes( OUT_X_L, 2 ) ) )
-          - $self->XZero,
+          - $self->xZero,
         y =>
           ( $self->_typecast_int_to_int16( $self->readNBytes( OUT_Y_L, 2 ) ) )
-          - $self->YZero,
+          - $self->yZero,
         z =>
           ( $self->_typecast_int_to_int16( $self->readNBytes( OUT_Z_L, 2 ) ) )
-          - $self->ZZero,
+          - $self->zZero,
     };
 }
 
 
-sub getReading {
+sub getReadingDegreesPerSecond {
     my ($self) = @_;
 
     my $gain = $self->gyroscopeGain;
@@ -127,6 +110,19 @@ sub getReading {
         x => ( $gyro->{x} * $gain ),
         y => ( $gyro->{y} * $gain ),
         z => ( $gyro->{z} * $gain ),
+    };
+}
+
+
+sub getReadingRadiansPerSecond {
+    my ($self) = @_;
+
+    my $gain = $self->gyroscopeGain;
+    my $gyro = $self->getRawReading;
+    return {
+        x => deg2rad( $gyro->{x} * $gain ),
+        y => deg2rad( $gyro->{y} * $gain ),
+        z => deg2rad( $gyro->{z} * $gain ),
     };
 }
 
@@ -152,7 +148,7 @@ Device::Gyroscope::L3GD20 - I2C interface to Gyroscope on the L3GD20 using Devic
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 ATTRIBUTES
 
@@ -164,26 +160,17 @@ Contains the I2CDevice Address for the bus on which your gyroscope is connected.
 
 Unless you are modifying gyroscope setup you must not change this. This contains the Gyroscope gain value which helps in converting the raw measurements from gyroscope register in to degrees per second.
 
-=head2 XZero
+=head2 xZero
 
 This is the raw value for the X axis when the gyro is stationary. This is a part of gyro calibration to get more accurate values for rotation.
 
-=head2 YZero
+=head2 yZero
 
 This is the raw value for the Y axis when the gyro is stationary. This is a part of gyro calibration to get more accurate values for rotation.
 
-=head2 ZZero
+=head2 zZero
 
 This is the raw value for the Z axis when the gyro is stationary. This is a part of gyro calibration to get more accurate values for rotation.
-
-=head2 lastReadingTime
-
-Time when the last reading was taken
-
-=head2 timeDrift
-
-time taken between last reading and current reading. 
-Make sure to take atleast two readings before you use this value for any calculations in your program otherwise you will get a bad value in this the first time you read the gyroscope.
 
 =head1 METHODS
 
@@ -198,11 +185,15 @@ The Device will not work properly unless you call this function
 
     $self->getRawReading()
 
-Return raw readings from accelerometer registers. Note that if XZero,YZero or ZZero are set, this function returns the values adjusted from the values at default non rotating state of the gyroscope. Its recommended that you set these values to achieve accurate results from the gyroscope.
+Return raw readings from accelerometer registers. Note that if xZero,yZero or zZero are set, this function returns the values adjusted from the values at default non rotating state of the gyroscope. Its recommended that you set these values to achieve accurate results from the gyroscope.
 
-=head2 getReading
+=head2 getReadingDegreesPerSecond
 
 Return gyroscope readings in degrees per second
+
+=head2 getReadingRadiansPerSecond
+
+Return gyroscope readings in radians per second
 
 =head2 calibrate
 

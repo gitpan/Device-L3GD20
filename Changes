@@ -1,6 +1,13 @@
 Changelog for Device-L3GD20
 
-0.005 2013-09-29T02:45:35
+0.006 2013-10-05T00:45:32
+ - new readings [Shantanu Bhadoria]
+ - Renamed getReading to getReadingDegreesPerSecond [Shantanu Bhadoria]
+
+0.005 2013-09-29T02:46:07
+ - v0.005
+   
+    - Pod Spelling Fixes [Shantanu] [Shantanu]
  - Pod Spelling Fixes [Shantanu]
 
 0.004 2013-09-27T10:18:18

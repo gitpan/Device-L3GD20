@@ -23,9 +23,9 @@ my %WriteMakefileArgs = (
   "NAME" => "Device::L3GD20",
   "PREREQ_PM" => {
     "Device::SMBus" => 0,
+    "Math::Trig" => 0,
     "Moose" => 0,
     "POSIX" => 0,
-    "Time::HiRes" => 0,
     "constant" => 0,
     "strict" => 0,
     "warnings" => 0
@@ -38,7 +38,7 @@ my %WriteMakefileArgs = (
     "List::Util" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "0.005",
+  "VERSION" => "0.006",
   "test" => {
     "TESTS" => "t/*.t"
   }
